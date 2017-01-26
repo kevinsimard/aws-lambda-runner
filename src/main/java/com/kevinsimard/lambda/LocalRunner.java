@@ -105,9 +105,7 @@ public final class LocalRunner<I, O> {
             }
         }
 
-        if (null == requestType) {
-            return null;
-        }
+        if (null == requestType) return null;
 
         ObjectMapper mapper = new ObjectMapper();
 
