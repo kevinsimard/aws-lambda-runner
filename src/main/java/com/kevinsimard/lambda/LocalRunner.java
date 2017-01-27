@@ -78,7 +78,9 @@ public final class LocalRunner<I, O> {
         }
 
         if (! (object instanceof RequestHandler)) {
-            throw new RuntimeException("Request handler class does not implement " + RequestHandler.class + " interface");
+            throw new RuntimeException(
+                "Request handler class does not implement " + RequestHandler.class + " interface"
+            );
         }
 
         @SuppressWarnings("unchecked")
