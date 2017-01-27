@@ -4,6 +4,8 @@ This is a AWS Lambda Java simulator that allows running and debugging Lambda fun
 
 ## Usage
 
+Use `$ mvn install` to install the JAR locally.
+
 See [aws-lambda-example](https://github.com/kevinsimard/aws-lambda-example) project for a real implementation.
 
 ## Code Structure
