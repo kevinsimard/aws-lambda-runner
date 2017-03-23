@@ -20,9 +20,9 @@ See [aws-lambda-example](https://github.com/kevinsimard/aws-lambda-example) proj
     ├── .editorconfig
     ├── .gitattributes
     ├── .gitignore
-    ├── LICENSE.txt
-    ├── pom.xml
-    └── README.md
+    ├── LICENSE.md
+    ├── README.md
+    └── pom.xml
 
 ## License
 
