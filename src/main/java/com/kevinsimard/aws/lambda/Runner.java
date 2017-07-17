@@ -1,4 +1,4 @@
-package com.kevinsimard.lambda;
+package com.kevinsimard.aws.lambda;
 
 import com.amazonaws.services.lambda.runtime.ClientContext;
 import com.amazonaws.services.lambda.runtime.CognitoIdentity;
@@ -13,7 +13,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 @SuppressWarnings("unused")
-public final class LocalRunner<I, O> {
+public final class Runner<I, O> {
 
     public static <I, O> void main(final String[] args) throws Exception {
         Context context = new Context() {

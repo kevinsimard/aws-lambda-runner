@@ -1,4 +1,4 @@
-# AWS Lambda Local Runner
+# AWS Lambda Runner
 
 This is a AWS Lambda Java simulator that allows running and debugging Lambda functions authored in Java locally. You can add this tool to your Lambda project as a provided dependency and enjoy testing locally your Lambda functions in Java.
 
@@ -15,8 +15,9 @@ See [aws-lambda-example](https://github.com/kevinsimard/aws-lambda-example) proj
     │       └── java
     │           └── com
     │               └── kevinsimard
-    │                   └── lambda
-    │                       └── LocalRunner.java
+    │                   └── aws
+    │                       └── lambda
+    │                           └── Runner.java
     ├── .editorconfig
     ├── .gitattributes
     ├── .gitignore
