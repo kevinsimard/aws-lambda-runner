@@ -1,10 +1,7 @@
 package com.kevinsimard.aws.lambda;
 
-import com.amazonaws.services.lambda.runtime.ClientContext;
-import com.amazonaws.services.lambda.runtime.CognitoIdentity;
-import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
-import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.amazonaws.services.lambda.runtime.*;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -90,7 +87,6 @@ public final class Runner<I, O> {
 
         try {
             O output = requestHandler.handleRequest(requestObject, context);
-            System.out.println(new ObjectMapper().writeValueAsString(output));
         } catch (RuntimeException e) {
             e.printStackTrace();
             System.exit(1);
@@ -110,11 +106,12 @@ public final class Runner<I, O> {
         if (null == requestType) return null;
 
         ObjectMapper mapper = new ObjectMapper();
+        JavaType type = mapper.getTypeFactory().constructType(requestType);
 
         try {
-            return mapper.readValue(json, mapper.getTypeFactory().constructType(requestType));
+            return mapper.readValue(json, type);
         } catch (RuntimeException e) {
-            return mapper.readValue("{}", mapper.getTypeFactory().constructType(requestType));
+            return mapper.readValue("{}", type);
         }
     }
 }
