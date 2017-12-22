@@ -9,7 +9,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-@SuppressWarnings("unused")
 public final class Runner<I, O> {
 
     public static <I, O> void main(final String[] args) throws Exception {
@@ -86,7 +85,7 @@ public final class Runner<I, O> {
         I requestObject = getRequestObject(requestHandler, args[1]);
 
         try {
-            O output = requestHandler.handleRequest(requestObject, context);
+            requestHandler.handleRequest(requestObject, context);
         } catch (RuntimeException e) {
             e.printStackTrace();
             System.exit(1);
