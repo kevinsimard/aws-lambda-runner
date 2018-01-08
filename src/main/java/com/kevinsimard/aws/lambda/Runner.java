@@ -70,13 +70,14 @@ public final class Runner<I, O> {
             Constructor<?> constructor = clazz.getConstructor();
             object = constructor.newInstance();
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(handlerClass + " not found in classpath");
+            throw new RuntimeException(String.format("%s not found in classpath", handlerClass));
         }
 
         if (! (object instanceof RequestHandler)) {
-            throw new RuntimeException(
-                "Request handler class does not implement " + RequestHandler.class + " interface"
-            );
+            throw new RuntimeException(String.format(
+                "Request handler class does not implement %s interface",
+                RequestHandler.class.toString()
+            ));
         }
 
         @SuppressWarnings("unchecked")
